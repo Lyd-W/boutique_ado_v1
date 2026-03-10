@@ -43,6 +43,7 @@ body {
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
+
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
@@ -123,7 +124,6 @@ input[name='q']::placeholder {
 }
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-
 .arrow-up {
     width: 0; 
     height: 0; 
@@ -173,7 +173,6 @@ input[name='q']::placeholder {
     overflow-x: hidden;
     overflow-y: auto;
 }
-
 
 /* -------------------------------- Media Queries */
 
