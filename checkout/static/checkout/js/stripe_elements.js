@@ -8,6 +8,7 @@
 
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var form = document.getElementById('payment-form');
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 var style = {
@@ -25,7 +26,10 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-var card = elements.create('card', {style: style});
+var card = elements.create('card', {
+    style: style,
+    hidePostalCode: true
+});
 card.mount('#card-element');
 
 // Handle realtime validation errors on the card element
@@ -43,9 +47,6 @@ card.addEventListener('change', function (event) {
         errorDiv.textContent = '';        
     }
 });
-
-// Handle form submit
-var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
